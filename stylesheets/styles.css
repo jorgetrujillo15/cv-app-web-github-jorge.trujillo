@@ -416,23 +416,27 @@ footer {
   barra de navegación 
   =================================*/
   
- /* ===============================
-   SIDE NAVIGATION INDEX (compacto)
-=================================*/
-
 .side-index {
   position: fixed;
-  top: 140px;
-  right: 20px;
-  width: 150px;               /* más angosta */
-  padding: 14px 12px;         /* menos padding */
+  top: 150px;
+
+  /* Centramos como el wrapper */
+  left: 50%;
+  transform: translateX(460px); 
+  /* 460px = mitad de 920px */
+
+  width: 150px;
+  padding: 14px 12px;
+
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+
   border: 1px solid rgba(255, 255, 255, 0.10);
   border-radius: 10px;
   box-shadow: 0 8px 25px rgba(0,0,0,0.35);
-  z-index: 1000;
+
+  z-index: 999;
 }
 
 .side-index a {
@@ -459,4 +463,59 @@ footer {
   
   html {
     scroll-behavior: smooth;
+  }
+  
+  
+  /* ===============================
+  responsive para movil 
+  =================================*/
+
+  /* ===============================
+   MOBILE OPTIMIZATION
+=================================*/
+
+@media screen and (max-width: 768px) {
+
+  body {
+    padding: 20px;
+  }
+
+  .wrapper {
+    width: 100%;
+  }
+
+  header {
+    position: static;
+    float: none;
+    width: 100%;
+    text-align: center;
+  }
+
+  header ul {
+    width: 100%;
+  }
+
+  section {
+    float: none;
+    width: 100%;
+    margin-top: 40px;
+  }
+
+  footer {
+    position: static;
+    width: 100%;
+    margin-top: 40px;
+    text-align: center;
+  }
+
+  /* Sidebar */
+  .side-index {
+    display: none;
+  }
+
+  .profile-img {
+    width: 200px;
+    height: 200px;
+  }
+
 }
